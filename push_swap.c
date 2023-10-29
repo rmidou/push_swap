@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 09:37:51 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 09:39:56 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ void	set_at_placeb(int *stack_A, int *stack_B)
 			}
 		}
 		else
-		{
-			i = 0;
-			while (!(stack_B[0] < stack_A[0]) || !(stack_B[ft_strlen(stack_B) - 1] > stack_A[0]))
-				rb(stack_B, ft_strlen(stack_B));
-		}
+	{
+		i = mini(stack_A, stack_B[0]);
+		while (stack_A[ft_strlen(stack_A) - 1] != i)
+			ra(stack_A, ft_strlen(stack_A));
+	}
 		pb(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
 	}
 }

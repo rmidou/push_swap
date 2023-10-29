@@ -6,53 +6,53 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:58 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 09:54:03 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 10:41:56 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rrb(int *stack_B, int len_B)
+void	rrb(int *stack_b, int len_b)
 {
 	int	temp;
 
-	if (len_B > 0) 
+	if (len_b > 0) 
 	{
-		temp = stack_B[len_B - 1];
-		while (len_B > 1)
+		temp = stack_b[len_b - 1];
+		while (len_b > 1)
 		{
-			stack_B[len_B - 1] = stack_B[len_B - 2];
-			len_B--;
+			stack_b[len_b - 1] = stack_b[len_b - 2];
+			len_b--;
 		}
-		stack_B[0] = temp;
+		stack_b[0] = temp;
 	}
 }
 
-void	rra(int *stack_A, int len_A)
+void	rra(int *stack_a, int len_a)
 {
 	int	temp;
 
-	if (len_A > 0) 
+	if (len_a > 0) 
 	{
-		temp = stack_A[len_A - 1];
-		while (len_A > 1)
+		temp = stack_a[len_a - 1];
+		while (len_a > 1)
 		{
-			stack_A[len_A - 1] = stack_A[len_A - 2];
-			len_A--;
+			stack_a[len_a - 1] = stack_a[len_a - 2];
+			len_a--;
 		}
-		stack_A[0] = temp;
+		stack_a[0] = temp;
 	}
 }
 
-void	sa(int *stack_A, int len_A)
+void	sa(int *stack_a, int len_a)
 {
 	int	temp;
 
-	if (len_A > 1)
+	if (len_a > 1)
 	{
-		temp = stack_A[0];
-		stack_A[0] = stack_A[1];
-		stack_A[1] = temp;
+		temp = stack_a[0];
+		stack_a[0] = stack_a[1];
+		stack_a[1] = temp;
 	}
 }
 

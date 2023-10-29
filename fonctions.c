@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:56 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 09:08:30 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 10:39:46 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pa(int *stack_a, int size_a, int *stack_b, int size_b)
 {
-    int i;
+	int	i;
 
 	i = 1;
 	stack_a[size_a + 1] = '\0';
@@ -22,7 +22,7 @@ void	pa(int *stack_a, int size_a, int *stack_b, int size_b)
 	{
 		stack_a[size_a] = stack_a[size_a - 1];
 		size_a--;
-    }
+	}
 	if (size_b > 0) 
 	{
 		stack_a[0] = stack_b[0];
@@ -38,7 +38,7 @@ void	pa(int *stack_a, int size_a, int *stack_b, int size_b)
 
 void	pb(int *stack_a, int size_a, int *stack_b, int size_b)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	stack_b[size_b + 1] = '\0';
@@ -60,38 +60,38 @@ void	pb(int *stack_a, int size_a, int *stack_b, int size_b)
 	}
 }
 
-void	ra(int *stack_A, int len_A)
+void	ra(int *stack_a, int len_a)
 {
 	int	temp;
 	int	i;
 
-	if (len_A > 0) 
+	if (len_a > 0) 
 	{
-		temp = stack_A [0];
+		temp = stack_a [0];
 		i = 1;
-		while (stack_A[i])
+		while (stack_a[i])
 		{
-			stack_A[i - 1] = stack_A[i];
+			stack_a[i - 1] = stack_a[i];
 			i++;
 		}
-		stack_A[i - 1] = temp;
+		stack_a[i - 1] = temp;
 	}
 }
 
-void	rb(int *stack_B, int len_B)
+void	rb(int *stack_b, int len_b)
 {
 	int	temp;
 	int	i;
 
-	if (len_B > 0) 
+	if (len_b > 0) 
 	{
-		temp = stack_B [0];
+		temp = stack_b [0];
 		i = 1;
-		while (stack_B[i])
+		while (stack_b[i])
 		{
-			stack_B[i - 1] = stack_B[i];
+			stack_b[i - 1] = stack_b[i];
 			i++;
 		}
-		stack_B[i - 1] = temp;
+		stack_b[i - 1] = temp;
 	}
 }

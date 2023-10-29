@@ -6,93 +6,51 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 10:07:43 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 10:43:53 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	set_at_place_mini(int *stack_A)
-{
-	if ((size_t)maxi(stack_A) > (ft_strlen(stack_A) / 2))
-	{
-		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
-			ra(stack_A, ft_strlen(stack_A));
-	}
-	else
-	{
-		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
-			rra(stack_A, ft_strlen(stack_A));
-	}
-}
-
-static void	set_at_place_maxi(int *stack_A)
-{
-	if ((size_t)maxi(stack_A) > (ft_strlen(stack_A) / 2))
-	{
-		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
-			ra(stack_A, ft_strlen(stack_A));
-	}
-	else
-	{
-		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
-			rra(stack_A, ft_strlen(stack_A));
-	}
-}
-
-void	set_at_place(int *stack_A, int *stack_B)
+static void	sort_all(int *stack_a)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	j = 0;
-	while (stack_A[i] < stack_B[0] && stack_A[i])
-		i++;
-	while (stack_A[j] > stack_B[0] && stack_A[j])
-		j++;
-	if ((size_t)i == ft_strlen(stack_A))
-		set_at_place_maxi(stack_A);
-	else if ((size_t)j == ft_strlen(stack_A))
-		set_at_place_mini(stack_A);
+	i = minimum(stack_a);
+	if ((size_t)i > (ft_strlen(stack_a) / 2))
+	{
+		while (stack_a[0] != i)
+			rra(stack_a, ft_strlen(stack_a));
+	}
 	else
 	{
-		i = mini(stack_A, stack_B[0]);
-		while (stack_A[ft_strlen(stack_A) - 1] != i)
-			ra(stack_A, ft_strlen(stack_A));
-	}
-	pa(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
-}
-
-static void	sort_all(int *stack_A)
-{
-	while (stack_A[0] != minimum(stack_A))
-	{
-		ra(stack_A, ft_strlen(stack_A));
+		while (stack_a[0] != i)
+			ra(stack_a, ft_strlen(stack_a));
 	}
 }
-void	push_swap(int *stack_A)
-{
-	int	*stack_B;
 
-	stack_B = (int *)malloc(sizeof(int) * (ft_strlen(stack_A) + 1));
-	stack_B[0] = '\0';
-	while (ft_strlen(stack_A) > 3)
+void	push_swap(int *stack_a)
+{
+	int	*stack_b;
+
+	stack_b = (int *)malloc(sizeof(int) * (ft_strlen(stack_a) + 1));
+	stack_b[0] = '\0';
+	while (ft_strlen(stack_a) > 3)
 	{
-		if (ft_strlen(stack_B) == 0)
-			pb(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
+		if (ft_strlen(stack_b) == 0)
+			pb(stack_a, ft_strlen(stack_a), stack_b, ft_strlen(stack_b));
 		else
-			set_at_placeb(stack_A, stack_B);
+			set_at_placeb(stack_a, stack_b);
 	}
-	sort_A(stack_A);
-	while (ft_strlen(stack_B) > 0)
+	sort_a(stack_a);
+	while (ft_strlen(stack_b) > 0)
 	{
-		set_at_place(stack_A, stack_B);
+		set_at_place(stack_a, stack_b);
 	}
-	free(stack_B);
-	sort_all(stack_A);
+	free(stack_b);
+	sort_all(stack_a);
 }
-
+/*
 int main() 
 {
     int *stack_a;
@@ -110,7 +68,7 @@ int main()
 	stack_a[7] = '\0';
 
     // Printing the unsorted stack
-    printf("Unsorted Stack A: ");
+    printf("Unsorted Stack a: ");
     while (stack_a[i])
 	{
         printf("%d ", stack_a[i]);
@@ -121,7 +79,7 @@ int main()
 
     // Printing the sorted stack
 	i = 0;
-    printf("Sorted Stack A: ");
+    printf("Sorted Stack a: ");
    	while (stack_a[i]) 
    	{
         printf("%d ", stack_a[i]);
@@ -130,4 +88,4 @@ int main()
     printf("\n");
 
     return 0;
-}
+}*/

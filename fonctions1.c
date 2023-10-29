@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fonctions1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:58 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/28 13:50:33 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/10/29 09:28:46 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,36 @@ void	sa(int *stack_A, int len_A)
 		stack_A[0] = stack_A[1];
 		stack_A[1] = temp;
 	}
+}
+
+static int	minimum(int *stack)
+{
+	int	i;
+	int	mini;
+
+	i = 1;
+	mini = stack[0];
+	while (stack[i])
+	{
+		if (stack[i] < mini)
+			mini = stack [i];
+		i++;
+	}
+	return (mini);
+}
+
+int	mini(int *stack, int nbr)
+{
+	int	i;
+	int	mini;
+
+	i = 1;
+	mini = minimum(stack);
+	while (stack[i])
+	{
+		if (stack[i] > mini && stack[i] < nbr)
+			mini = stack [i];
+		i++;
+	}
+	return (mini);
 }

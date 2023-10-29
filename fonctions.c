@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fonctions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:56 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/28 13:49:18 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/10/29 09:08:30 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	pb(int *stack_a, int size_a, int *stack_b, int size_b)
 	int i;
 
 	i = 1;
-	printf("a");
 	stack_b[size_b + 1] = '\0';
 	while (stack_b[size_b - 1])
 	{

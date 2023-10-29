@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/28 13:41:39 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/10/29 09:37:51 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	set_at_placeb(int *stack_A, int *stack_B)
 
 	i = 0;
 	j = 0;
-	printf("a");
 	if (ft_strlen(stack_B) == 1)
 		pb(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
 	else
@@ -79,12 +78,12 @@ void	set_at_place(int *stack_A, int *stack_B)
 	{
 		if (maxi(stack_A) > (ft_strlen(stack_A) / 2))
 		{
-			while(stack_A[0] != maxii(stack_A))
+			while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
 				ra(stack_A, ft_strlen(stack_A));
 		}
 		else
 		{
-			while(stack_A[0] != maxii(stack_A))
+			while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
 				rra(stack_A, ft_strlen(stack_A));
 		}
 	}
@@ -92,19 +91,19 @@ void	set_at_place(int *stack_A, int *stack_B)
 	{
 		if (maxi(stack_A) > (ft_strlen(stack_A) / 2))
 		{
-			while(stack_A[0] != maxii(stack_A))
+			while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
 				ra(stack_A, ft_strlen(stack_A));
 		}
 		else
 		{
-			while(stack_A[0] != maxii(stack_A))
+			while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
 				rra(stack_A, ft_strlen(stack_A));
 		}
 	}
 	else
 	{
-		i = 0;
-		while (!(stack_A[0] < stack_B[0]) || !(stack_A[ft_strlen(stack_B) - 1] > stack_B[0]))
+		i = mini(stack_A, stack_B[0]);
+		while (stack_A[ft_strlen(stack_A) - 1] != i)
 			ra(stack_A, ft_strlen(stack_A));
 	}
 	pa(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
@@ -120,31 +119,26 @@ void	push_swap(int *stack_A)
 	int	*stack_B;
 
 	i = 0;
-	printf("a");
 	stack_B = (int *)malloc(sizeof(int) * (ft_strlen(stack_A) + 1));
 	stack_B[0] = '\0';
-	printf("a");
 	while (ft_strlen(stack_A) > 3)
 	{
 		if (ft_strlen(stack_B) == 0)
 			pb(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
 		else
 			set_at_placeb(stack_A, stack_B);
-		printf("b");
 	}
-	printf("a");
 	sort_A(stack_A);
 	while (ft_strlen(stack_B) > 0)
 	{
-		printf("%lddebut", ft_strlen(stack_B));
 		set_at_place(stack_A, stack_B);
 	}
 	free(stack_B);
 	//sort_all();
-
 }
 
-int main() {
+int main() 
+{
     int *stack_a;
 	int i;
 
@@ -158,6 +152,7 @@ int main() {
 	stack_a[5] = 6;
 	stack_a[6] = 3;
 	stack_a[7] = '\0';
+
     // Printing the unsorted stack
     printf("Unsorted Stack A: ");
     while (stack_a[i])
@@ -165,8 +160,8 @@ int main() {
         printf("%d ", stack_a[i]);
 		i++;
     }
-    // Sorting stack a using bubble sort
     push_swap(stack_a);
+	printf("\n");
 
     // Printing the sorted stack
 	i = 0;

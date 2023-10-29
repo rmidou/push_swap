@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:46 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/28 13:53:08 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/10/29 09:19:19 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 void	pa(int *stack_a, int size_a, int *stack_b, int size_b);
 void	pb(int *stack_a, int size_a, int *stack_b, int size_b);
@@ -27,5 +28,8 @@ void	sa(int *stack_A, int len_A);
 size_t	ft_strlen(const int *str);
 void	sort_last(int *stack_A);
 void	sort_A(int *stack_A);
+int		maxi(int *stack);
+int		maxii(int *stack);
+int		mini(int *stack, int nbr);
 
 #endif

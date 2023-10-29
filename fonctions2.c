@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fonctions2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:53 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/28 13:53:52 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/10/29 10:08:13 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void	sort_last(int *stack_A)
 
 void	sort_A(int *stack_A)
 {
-	int	temp;
-
 	if (ft_strlen(stack_A) <= 1)
 		return ;
 	if ((ft_strlen(stack_A) == 2))

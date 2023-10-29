@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 09:55:04 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 10:07:43 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	set_at_place_mini(int *stack_A)
 {
-	if (maxi(stack_A) > (ft_strlen(stack_A) / 2))
+	if ((size_t)maxi(stack_A) > (ft_strlen(stack_A) / 2))
 	{
 		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
 			ra(stack_A, ft_strlen(stack_A));
@@ -28,7 +28,7 @@ static void	set_at_place_mini(int *stack_A)
 
 static void	set_at_place_maxi(int *stack_A)
 {
-	if (maxi(stack_A) > (ft_strlen(stack_A) / 2))
+	if ((size_t)maxi(stack_A) > (ft_strlen(stack_A) / 2))
 	{
 		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
 			ra(stack_A, ft_strlen(stack_A));
@@ -51,9 +51,9 @@ void	set_at_place(int *stack_A, int *stack_B)
 		i++;
 	while (stack_A[j] > stack_B[0] && stack_A[j])
 		j++;
-	if (i == ft_strlen(stack_A))
+	if ((size_t)i == ft_strlen(stack_A))
 		set_at_place_maxi(stack_A);
-	else if (j == ft_strlen(stack_A))
+	else if ((size_t)j == ft_strlen(stack_A))
 		set_at_place_mini(stack_A);
 	else
 	{
@@ -73,10 +73,8 @@ static void	sort_all(int *stack_A)
 }
 void	push_swap(int *stack_A)
 {
-    int	i;
 	int	*stack_B;
 
-	i = 0;
 	stack_B = (int *)malloc(sizeof(int) * (ft_strlen(stack_A) + 1));
 	stack_B[0] = '\0';
 	while (ft_strlen(stack_A) > 3)

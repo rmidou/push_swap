@@ -6,60 +6,37 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 09:39:56 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 09:55:04 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	set_at_placeb(int *stack_A, int *stack_B)
+static void	set_at_place_mini(int *stack_A)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	if (ft_strlen(stack_B) == 1)
-		pb(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
-	else
+	if (maxi(stack_A) > (ft_strlen(stack_A) / 2))
 	{
-		while (stack_B[i] < stack_A[0] && stack_B[i])
-			i++;
-		while (stack_B[j] > stack_A[0] && stack_B[j])
-			j++;
-		if (i == ft_strlen(stack_B - 1))
-		{
-			if (maxi(stack_B) > (ft_strlen(stack_B) / 2))
-			{
-				while(stack_B[0] != maxii(stack_B))
-					rb(stack_B, ft_strlen(stack_B));
-			}
-			else
-			{
-				while(stack_B[0] != maxii(stack_B))
-					rrb(stack_B, ft_strlen(stack_B));
-			}
-		}
-		else if (j == ft_strlen(stack_B - 1))
-		{
-			if (maxi(stack_B) > (ft_strlen(stack_B) / 2))
-			{
-				while(stack_B[0] != maxii(stack_B))
-					rb(stack_B, ft_strlen(stack_B));
-			}
-			else
-			{
-				while(stack_B[0] != maxii(stack_B))
-					rrb(stack_B, ft_strlen(stack_B));
-			}
-		}
-		else
-	{
-		i = mini(stack_A, stack_B[0]);
-		while (stack_A[ft_strlen(stack_A) - 1] != i)
+		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
 			ra(stack_A, ft_strlen(stack_A));
 	}
-		pb(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
+	else
+	{
+		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
+			rra(stack_A, ft_strlen(stack_A));
+	}
+}
+
+static void	set_at_place_maxi(int *stack_A)
+{
+	if (maxi(stack_A) > (ft_strlen(stack_A) / 2))
+	{
+		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
+			ra(stack_A, ft_strlen(stack_A));
+	}
+	else
+	{
+		while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
+			rra(stack_A, ft_strlen(stack_A));
 	}
 }
 
@@ -75,31 +52,9 @@ void	set_at_place(int *stack_A, int *stack_B)
 	while (stack_A[j] > stack_B[0] && stack_A[j])
 		j++;
 	if (i == ft_strlen(stack_A))
-	{
-		if (maxi(stack_A) > (ft_strlen(stack_A) / 2))
-		{
-			while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
-				ra(stack_A, ft_strlen(stack_A));
-		}
-		else
-		{
-			while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
-				rra(stack_A, ft_strlen(stack_A));
-		}
-	}
+		set_at_place_maxi(stack_A);
 	else if (j == ft_strlen(stack_A))
-	{
-		if (maxi(stack_A) > (ft_strlen(stack_A) / 2))
-		{
-			while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
-				ra(stack_A, ft_strlen(stack_A));
-		}
-		else
-		{
-			while(stack_A[ft_strlen(stack_A) - 1] != maxii(stack_A))
-				rra(stack_A, ft_strlen(stack_A));
-		}
-	}
+		set_at_place_mini(stack_A);
 	else
 	{
 		i = mini(stack_A, stack_B[0]);
@@ -108,11 +63,14 @@ void	set_at_place(int *stack_A, int *stack_B)
 	}
 	pa(stack_A, ft_strlen(stack_A), stack_B, ft_strlen(stack_B));
 }
-/*
-void	sort_all(int *stack_A)
-{
 
-}*/
+static void	sort_all(int *stack_A)
+{
+	while (stack_A[0] != minimum(stack_A))
+	{
+		ra(stack_A, ft_strlen(stack_A));
+	}
+}
 void	push_swap(int *stack_A)
 {
     int	i;
@@ -134,7 +92,7 @@ void	push_swap(int *stack_A)
 		set_at_place(stack_A, stack_B);
 	}
 	free(stack_B);
-	//sort_all();
+	sort_all(stack_A);
 }
 
 int main() 

@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:46 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 09:19:19 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 09:54:16 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void	sort_A(int *stack_A);
 int		maxi(int *stack);
 int		maxii(int *stack);
 int		mini(int *stack, int nbr);
+void	set_at_placeb(int *stack_A, int *stack_B);
+int		minimum(int *stack);
 
 #endif

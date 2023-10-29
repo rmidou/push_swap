@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:58 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 09:28:46 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 09:54:03 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	sa(int *stack_A, int len_A)
 	}
 }
 
-static int	minimum(int *stack)
+int	minimum(int *stack)
 {
 	int	i;
 	int	mini;

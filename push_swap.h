@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:46 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 10:42:55 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/10/29 11:29:33 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int		mini(int *stack, int nbr);
 void	set_at_placeb(int *stack_a, int *stack_b);
 int		minimum(int *stack);
 void	set_at_place(int *stack_a, int *stack_b);
+int		*filling(char **av);
 
 #endif

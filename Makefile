@@ -4,7 +4,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = push_swap
 
-SRC = push_swap.c \
+SRC = main.c \
 		fonctions.c \
 		fonctions1.c \
 		fonctions2.c \

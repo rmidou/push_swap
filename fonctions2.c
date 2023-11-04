@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fonctions2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:53 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 10:41:46 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/11/04 14:33:54 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const int *str)
 	size_t	i;
 
 	i = 0;
+	if (str == NULL)
+		return (0);
 	while (str[i])
 		i++;
 	return (i);

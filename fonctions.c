@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fonctions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:56 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 11:29:14 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/11/04 14:57:23 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,33 +100,76 @@ void	rb(int *stack_b, int len_b)
 	write(1, "rb\n", 3);
 }
 
+int	ft_isdigit(char *c)
+{
+	while (*c)
+	{
+		if (*c < '0' || *c > '9')
+			return (0);
+		*c++;
+	}
+	return (1);
+}
+
+int	ft_atoi(const char *nptr)
+{
+	int		i;
+	int		signe;
+	int		nbr;
+
+	i = 0;
+	signe = 1;
+	nbr = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			signe = -1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		nbr *= 10;
+		nbr += (nptr[i] - 48);
+		i++;
+	}
+	return (nbr * signe);
+}
+#include <stdio.h>
+
 int	*filling(char **av)
 {
 	int	i;
 	int *temp;
 	int	j;
 	int *stack_a;
+	int	len_a;
 
-	stack_a = (int *)malloc(sizeof(int) * 1);
-	stack_a[0] = '\0';
-	i = 0;
-	j = 0;
-	while (av[1][i])
+	stack_a = NULL;
+	i = 2;
+	len_a = 0;
+	while (av[i])
 	{
-		temp = (int *)malloc(sizeof(int) * i + 1);
-		if (i != 0)
+		if (ft_isdigit(av[i]))
 		{
-			while (j < i)
-			{
-				temp[j] = stack_a[j];
-				j++;
-			}
 			j = 0;
+			temp = malloc(sizeof(int) * (ft_strlen(stack_a) + 2));
+			if (stack_a)
+			{
+				while (stack_a[j])
+				{
+					temp[j] = stack_a[j];
+					j++;
+				}
+			}
+			temp[j] = atoi(av[i]);
+			temp[j + 1] = '\0';
+			stack_a = temp;
 		}
-		temp[i + 1] = '\0';
-		temp[i] = (int)(av[1][i] - 48);
-		stack_a = temp;
-		free(temp);
+		else
+			write(1, "erreur\n", 7);
+		i++;
 	}
 	return (stack_a);
 }

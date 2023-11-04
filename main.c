@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 11:24:33 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/11/04 14:43:10 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ int main()
     return 0;
 }*/
 
+#include <stdio.h>
+
 int	main(int ac, char **av)
 {
 	int	*stack_a;
@@ -100,8 +102,11 @@ int	main(int ac, char **av)
 	//if (!is_correct_input(av))
 		//exit_error(NULL, NULL);
 	stack_b = NULL;
+	printf("marge");
 	stack_a = filling(av);
+	printf("marge");
 	push_swap(stack_a);
+	printf("marge");
 	free(stack_a);
 	free(stack_b);
 	return (0);

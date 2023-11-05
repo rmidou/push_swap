@@ -1,29 +1,26 @@
 CC = gcc
-
-CFLAGS = -Wall -Werror -Wextra
-
+CFLAGS = -g -Wall -Wextra -Werror
 NAME = push_swap
-
-SRC = main.c \
+M_SRCS = main.c \
 		fonctions.c \
 		fonctions1.c \
 		fonctions2.c \
 		set_at_placeb.c \
+		set_at_place.c \
 
-OBJ = $(SRC:.c=.o)
+M_OBJS = $(M_SRCS:.c=.o)
+all : $(NAME) clean
 
-all : $(NAME)
+$(NAME) : $(M_OBJS)
+	$(CC) $(CFLAGS) $^ -o $@
 
-%.o : %.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+%.o : %.c push_swap.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+clean:
+	rm -rf $(M_OBJS)
 
-clean :
-	rm -rf $(OBJ) $(BONUSOBJ)
-
-fclean : clean
+fclean: clean
 	rm -rf $(NAME)
 
-re : clean all
+re: fclean all

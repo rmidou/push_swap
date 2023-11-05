@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/04 14:43:10 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/05 14:55:41 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	push_swap(int *stack_a)
 	stack_b[0] = '\0';
 	while (ft_strlen(stack_a) > 3)
 	{
-		if (ft_strlen(stack_b) == 0)
-			pb(stack_a, ft_strlen(stack_a), stack_b, ft_strlen(stack_b));
-		else
-			set_at_placeb(stack_a, stack_b);
+		//if (ft_strlen(stack_b) == 0)
+		pb(stack_a, ft_strlen(stack_a), stack_b, ft_strlen(stack_b));
+		//else
+			//set_at_placeb(stack_a, stack_b);
 	}
 	sort_a(stack_a);
 	while (ft_strlen(stack_b) > 0)
@@ -97,16 +97,23 @@ int	main(int ac, char **av)
 	int	*stack_a;
 	int	*stack_b;
 
+	int	i;
+	i = 0;
+
 	if (ac < 2)
 		return (0);
 	//if (!is_correct_input(av))
 		//exit_error(NULL, NULL);
 	stack_b = NULL;
-	printf("marge");
 	stack_a = filling(av);
-	printf("marge");
 	push_swap(stack_a);
-	printf("marge");
+	printf("Sorted Stack a: ");
+   	while (stack_a[i]) 
+   	{
+        printf("%d ", stack_a[i]);
+		i++;
+    }
+    printf("\n");
 	free(stack_a);
 	free(stack_b);
 	return (0);

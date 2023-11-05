@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_at_place.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:42:39 by nbiron            #+#    #+#             */
-/*   Updated: 2023/10/29 10:44:03 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/11/05 14:07:16 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	set_at_place_mini(int *stack_a)
 {
-	if ((size_t)maxi(stack_a) > (ft_strlen(stack_a) / 2))
+	if ((size_t)maxi(stack_a) < (ft_strlen(stack_a) / 2))
 	{
 		while (stack_a[ft_strlen(stack_a) - 1] != maxii(stack_a))
 			ra (stack_a, ft_strlen(stack_a));
@@ -28,7 +28,7 @@ static void	set_at_place_mini(int *stack_a)
 
 static void	set_at_place_maxi(int *stack_a)
 {
-	if ((size_t)maxi(stack_a) > (ft_strlen(stack_a) / 2))
+	if ((size_t)maxi(stack_a) < (ft_strlen(stack_a) / 2))
 	{
 		while (stack_a[ft_strlen(stack_a) - 1] != maxii(stack_a))
 			ra (stack_a, ft_strlen(stack_a));
@@ -40,12 +40,16 @@ static void	set_at_place_maxi(int *stack_a)
 	}
 }
 
+
+#include <stdio.h>
+
+
 static void	set_at_place_other(int *stack_a, int *stack_b)
 {
 	int	i;
 
 	i = mini(stack_a, stack_b[0]);
-	if ((size_t)i > (ft_strlen(stack_a) / 2))
+	if ((size_t)i < (ft_strlen(stack_a) / 2))
 	{
 		while (stack_a[ft_strlen(stack_a) - 1] != i)
 			rra (stack_a, ft_strlen(stack_a));

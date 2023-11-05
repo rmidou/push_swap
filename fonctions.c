@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:56 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/04 14:57:23 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/05 14:31:27 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	pa(int *stack_a, int size_a, int *stack_b, int size_b)
 
 	i = 1;
 	stack_a[size_a + 1] = '\0';
-	while (stack_a[size_a - 1])
+	while (size_a > 0)
 	{
 		stack_a[size_a] = stack_a[size_a - 1];
 		size_a--;
@@ -43,7 +43,7 @@ void	pb(int *stack_a, int size_a, int *stack_b, int size_b)
 
 	i = 1;
 	stack_b[size_b + 1] = '\0';
-	while (stack_b[size_b - 1])
+	while (size_b > 0)
 	{
 		stack_b[size_b] = stack_b[size_b - 1];
 		size_b--;
@@ -102,11 +102,14 @@ void	rb(int *stack_b, int len_b)
 
 int	ft_isdigit(char *c)
 {
-	while (*c)
+	int	i;
+
+	i = 0;
+	while (c[i])
 	{
-		if (*c < '0' || *c > '9')
+		if (c[i] < '0' || c[i] > '9')
 			return (0);
-		*c++;
+		i++;
 	}
 	return (1);
 }
@@ -144,11 +147,9 @@ int	*filling(char **av)
 	int *temp;
 	int	j;
 	int *stack_a;
-	int	len_a;
 
 	stack_a = NULL;
-	i = 2;
-	len_a = 0;
+	i = 1;
 	while (av[i])
 	{
 		if (ft_isdigit(av[i]))
@@ -165,6 +166,7 @@ int	*filling(char **av)
 			}
 			temp[j] = atoi(av[i]);
 			temp[j + 1] = '\0';
+			free(stack_a);
 			stack_a = temp;
 		}
 		else

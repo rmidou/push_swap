@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:46 by rmidou            #+#    #+#             */
-/*   Updated: 2023/10/29 11:29:33 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/11/05 16:23:04 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void	set_at_placeb(int *stack_a, int *stack_b);
 int		minimum(int *stack);
 void	set_at_place(int *stack_a, int *stack_b);
 int		*filling(char **av);
+int		minimum_adresse(int *stack);
+int		mini_adresse(int *stack, int nbr);
 
 #endif

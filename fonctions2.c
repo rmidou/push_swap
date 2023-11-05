@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:53 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/04 15:23:16 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/05 16:22:31 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	maxi(int *stack)
 	int	maxi;
 	int	adresse;
 
-	i = 1;
+	i = 0;
 	maxi = stack[0];
 	adresse = 0;
 	while (stack[i])
@@ -83,13 +83,33 @@ int	maxi(int *stack)
 	}
 	return (adresse);
 }
+int	minimum_adresse(int *stack)
+{
+	int	i;
+	int	mini;
+	int	adresse;
+
+	i = 0;
+	mini = stack[0];
+	adresse = 0;
+	while (stack[i])
+	{
+		if (stack[i] < mini)
+		{
+			mini = stack [i];
+			adresse = i;
+		}
+		i++;
+	}
+	return (adresse);
+}
 
 int	maxii(int *stack)
 {
 	int	i;
 	int	maxi;
 
-	i = 1;
+	i = 0;
 	maxi = stack[0];
 	while (stack[i])
 	{

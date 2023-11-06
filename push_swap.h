@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:46 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/05 16:23:04 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 07:24:05 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ void	set_at_place(int *stack_a, int *stack_b);
 int		*filling(char **av);
 int		minimum_adresse(int *stack);
 int		mini_adresse(int *stack, int nbr);
+int		*ft_striteri(int *s, int *stack_to, int len_stack_in);
+int		ft_mini_moove(int nb, int nb_adresse, int *stack_to, int len_stack_in);
 
 #endif

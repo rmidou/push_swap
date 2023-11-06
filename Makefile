@@ -7,6 +7,7 @@ M_SRCS = main.c \
 		fonctions2.c \
 		set_at_placeb.c \
 		set_at_place.c \
+		optimisation.c \
 
 M_OBJS = $(M_SRCS:.c=.o)
 all : $(NAME) clean

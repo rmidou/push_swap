@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/05 16:51:41 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 07:46:13 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ void	push_swap(int *stack_a)
 	strongest = ft_strongest(stack_a);
 	while (ft_strlen(stack_a) > 3)
 	{
-		if (in(strongest, stack_a[0]))
-			ra (stack_a, ft_strlen(stack_a));
-		else if (ft_strlen(stack_b) == 0)
+		//if (in(strongest, stack_a[0]))
+			//ra (stack_a, ft_strlen(stack_a));
+		if (ft_strlen(stack_b) == 0 || ft_strlen(stack_b) == 1)
 			pb(stack_a, ft_strlen(stack_a), stack_b, ft_strlen(stack_b));
 		else
 			set_at_placeb(stack_a, stack_b);
@@ -85,7 +85,7 @@ void	push_swap(int *stack_a)
 	sort_b(stack_b);
 	sort_a(stack_a);
 	while (ft_strlen(stack_b) > 0)
-		pa(stack_a, ft_strlen(stack_a), stack_b, ft_strlen(stack_b));
+		set_at_place(stack_a, stack_b);
 	free(stack_b);
 	free(strongest);
 	//sort_all(stack_a);
@@ -137,8 +137,8 @@ int	main(int ac, char **av)
 	int	*stack_a;
 	int	*stack_b;
 
-	//int	i;
-	//i = 0;
+	// int	i;
+	// i = 0;
 
 	if (ac < 2)
 		return (0);

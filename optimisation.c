@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:38:39 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 07:27:10 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 09:10:51 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_mini_moove(int nb, int nb_adresse, int *stack_to, int len_stack_in)
 	}
 	else
 	{
-		if ((size_t)mini_adresse(stack_to, nb) < (ft_strlen(stack_to) / 2) - 1)
+		if ((size_t)mini_adresse(stack_to, nb) < (ft_strlen(stack_to) / 2))
 			total += mini_adresse(stack_to, nb);
 		else
 			total += (ft_strlen(stack_to) - mini_adresse(stack_to, nb));

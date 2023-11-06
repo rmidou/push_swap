@@ -6,28 +6,28 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 07:46:13 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 07:58:33 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// static void	sort_all(int *stack_a)
-// {
-// 	int	i;
+static void	sort_all(int *stack_a)
+{
+	int	i;
 
-// 	i = minimum(stack_a);
-// 	if ((size_t)minimum_adresse(stack_a) > (ft_strlen(stack_a) / 2))
-// 	{
-// 		while (stack_a[0] != i)
-// 			rra(stack_a, ft_strlen(stack_a));
-// 	}
-// 	else
-// 	{
-// 		while (stack_a[0] != i)
-// 			ra(stack_a, ft_strlen(stack_a));
-// 	}
-// }
+	i = minimum(stack_a);
+	if ((size_t)minimum_adresse(stack_a) > (ft_strlen(stack_a) / 2))
+	{
+		while (stack_a[0] != i)
+			rra(stack_a, ft_strlen(stack_a));
+	}
+	else
+	{
+		while (stack_a[0] != i)
+			ra(stack_a, ft_strlen(stack_a));
+	}
+}
 
 static void	sort_b(int *stack_b)
 {
@@ -88,7 +88,7 @@ void	push_swap(int *stack_a)
 		set_at_place(stack_a, stack_b);
 	free(stack_b);
 	free(strongest);
-	//sort_all(stack_a);
+	sort_all(stack_a);
 }
 /*
 int main() 

@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:42:39 by nbiron            #+#    #+#             */
-/*   Updated: 2023/11/06 07:45:15 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 09:38:10 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	set_at_place_other(int *stack_a, int *stack_b)
 	int	i;
 
 	i = mini(stack_a, stack_b[0]);
-	if ((size_t)mini_adresse(stack_a, stack_b[0]) > (ft_strlen(stack_a) / 2) - 1)
+	if ((size_t)mini_adresse(stack_a, stack_b[0]) > (ft_strlen(stack_a) / 2))
 	{
 		while (stack_a[ft_strlen(stack_a) - 1] != i)
 			rra(stack_a, ft_strlen(stack_a));

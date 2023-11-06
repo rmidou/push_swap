@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:53 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/05 16:22:31 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 09:35:30 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int	maxi(int *stack)
 	}
 	return (adresse);
 }
+
 int	minimum_adresse(int *stack)
 {
 	int	i;

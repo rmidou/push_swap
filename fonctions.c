@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:56 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/05 14:31:27 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 09:43:29 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,14 +139,13 @@ int	ft_atoi(const char *nptr)
 	}
 	return (nbr * signe);
 }
-#include <stdio.h>
 
 int	*filling(char **av)
 {
 	int	i;
-	int *temp;
+	int	*temp;
 	int	j;
-	int *stack_a;
+	int	*stack_a;
 
 	stack_a = NULL;
 	i = 1;

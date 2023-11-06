@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 07:58:33 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 09:40:50 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	*ft_strongest(int *stack_a)
 int	in(int *strongest, int nb)
 {
 	if (nb == strongest[0] || nb == strongest[1] || nb == strongest[2])
-		return(1);
+		return (1);
 	return (0);
 }
 
@@ -90,47 +90,8 @@ void	push_swap(int *stack_a)
 	free(strongest);
 	sort_all(stack_a);
 }
-/*
-int main() 
-{
-    int *stack_a;
-	int i;
 
-	i = 0;
-	stack_a = malloc(sizeof(int) * 8);
-	stack_a[0] = 1;
-	stack_a[1] = 4;
-	stack_a[2] = 7;
-	stack_a[3] = 5;
-	stack_a[4] = 2;
-	stack_a[5] = 6;
-	stack_a[6] = 3;
-	stack_a[7] = '\0';
-
-    // Printing the unsorted stack
-    printf("Unsorted Stack a: ");
-    while (stack_a[i])
-	{
-        printf("%d ", stack_a[i]);
-		i++;
-    }
-    push_swap(stack_a);
-	printf("\n");
-
-    // Printing the sorted stack
-	i = 0;
-    printf("Sorted Stack a: ");
-   	while (stack_a[i]) 
-   	{
-        printf("%d ", stack_a[i]);
-		i++;
-    }
-    printf("\n");
-
-    return 0;
-}*/
-
-#include <stdio.h>
+//#include <stdio.h>
 
 int	main(int ac, char **av)
 {
@@ -139,7 +100,6 @@ int	main(int ac, char **av)
 
 	// int	i;
 	// i = 0;
-
 	if (ac < 2)
 		return (0);
 	//if (!is_correct_input(av))

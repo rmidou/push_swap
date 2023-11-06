@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 09:49:17 by nbiron            #+#    #+#             */
-/*   Updated: 2023/11/06 09:11:40 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 09:44:49 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	set_at_placeb(int *stack_a, int *stack_b)
 		if ((size_t)minimum_adresse(minimum_stack_a) < (ft_strlen(stack_a) / 2))
 			ra (stack_a, ft_strlen(stack_a));
 		else
-			rra (stack_a, ft_strlen(stack_a));	
+			rra (stack_a, ft_strlen(stack_a));
 	}
 	if (stack_a[0] > maxii(stack_b) || stack_a[0] < minimum(stack_b))
 		set_at_placeb_mini (stack_b);

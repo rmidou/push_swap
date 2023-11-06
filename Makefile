@@ -1,13 +1,17 @@
 CC = gcc
 CFLAGS = -g -Wall -Wextra -Werror
 NAME = push_swap
-M_SRCS = main.c \
+M_SRCS = push_swap.c \
 		fonctions.c \
 		fonctions1.c \
-		fonctions2.c \
+		ft_strlen.c \
+		maximum.c \
+		minimum.c \
+		optimisation.c \
+		sort.c \
 		set_at_placeb.c \
 		set_at_place.c \
-		optimisation.c \
+		filling.c \
 
 M_OBJS = $(M_SRCS:.c=.o)
 all : $(NAME) clean

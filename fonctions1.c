@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:58 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/05 16:22:21 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 10:54:03 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,57 +57,4 @@ void	sa(int *stack_a, int len_a)
 		stack_a[1] = temp;
 	}
 	write(1, "sa\n", 3);
-}
-
-int	minimum(int *stack)
-{
-	int	i;
-	int	mini;
-
-	i = 0;
-	mini = stack[0];
-	while (stack[i])
-	{
-		if (stack[i] < mini)
-			mini = stack [i];
-		i++;
-	}
-	return (mini);
-}
-
-int	mini(int *stack, int nbr)
-{
-	int	i;
-	int	mini;
-
-	i = 0;
-	mini = minimum(stack);
-	while (stack[i])
-	{
-		if (stack[i] > mini && stack[i] < nbr)
-			mini = stack [i];
-		i++;
-	}
-	return (mini);
-}
-
-int	mini_adresse(int *stack, int nbr)
-{
-	int	i;
-	int	mini;
-	int	adresse;
-
-	i = 0;
-	mini = minimum(stack);
-	adresse = 0;
-	while (stack[i])
-	{
-		if (stack[i] > mini && stack[i] < nbr)
-		{
-			mini = stack [i];
-			adresse = i;
-		}
-		i++;
-	}
-	return (adresse);
 }

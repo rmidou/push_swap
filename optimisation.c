@@ -6,28 +6,13 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:38:39 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 12:46:36 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/07 14:12:41 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*ft_striteri(int *s, int *stack_to, int len_stack_in)
-{
-	int	i;
-	int	*tab;
-
-	i = 0;
-	tab = malloc(sizeof(int) * (len_stack_in + 1));
-	while (s[i] != '\0')
-	{
-		tab[i] = ft_mini_moove(s[i], i, stack_to, len_stack_in);
-		i++;
-	}
-	return (tab);
-}
-
-int	ft_mini_moove(int nb, int nb_adresse, int *stack_to, int len_stack_in)
+static int	ft_mini_moove1(int nb_adresse, int len_stack_in)
 {
 	int	total;
 
@@ -36,19 +21,53 @@ int	ft_mini_moove(int nb, int nb_adresse, int *stack_to, int len_stack_in)
 		total += nb_adresse;
 	else
 		total += (len_stack_in - nb_adresse);
-	if (nb > maxii(stack_to) || nb < minimum(stack_to))
-	{
-		if ((size_t)maxi(stack_to) > (ft_strlen(stack_to) / 2))
-			total += (ft_strlen(stack_to) - maxi(stack_to));
-		else
-			total += maxi(stack_to);
-	}
-	else
-	{
-		if ((size_t)mini_adresse(stack_to, nb) > (ft_strlen(stack_to) / 2))
-			total += (ft_strlen(stack_to) - mini_adresse(stack_to, nb));
-		else
-			total += mini_adresse(stack_to, nb);
-	}
 	return (total);
+}
+
+static int	ft_mini_moove_mini(int *stack_to, int len_stack_to)
+{
+	int	total;
+
+	total = 0;
+	if (maxi(stack_to, len_stack_to) > (len_stack_to / 2))
+		total += (len_stack_to - maxi(stack_to, len_stack_to));
+	else
+		total += maxi(stack_to, len_stack_to);
+	return (total);
+}
+
+static	int	ft_mini_moove(int *stack_to, int len_stack_to, int nb)
+{
+	int	total;
+
+	total = 0;
+	if (mini_adresse(stack_to, nb, len_stack_to) > (len_stack_to / 2))
+		total += (len_stack_to - mini_adresse(stack_to, nb, len_stack_to));
+	else
+		total += mini_adresse(stack_to, nb, len_stack_to);
+	return (total);
+}
+
+int	*ft_striteri(int *s, int *stack_to, int len_stack_in, int len_stack_to)
+{
+	int	i;
+	int	*tab;
+	int	total;
+
+	total = 0;
+	i = 0;
+	tab = malloc(sizeof(int) * (len_stack_in + 1));
+	while (i < len_stack_in)
+	{
+		if (s[i] > maxii(stack_to, len_stack_to)
+			|| s[i] < minimum(stack_to, len_stack_to))
+			total += ft_mini_moove_mini(stack_to, len_stack_to);
+		else
+			total += ft_mini_moove(stack_to, len_stack_to, s[i]);
+		total += ft_mini_moove1(i, len_stack_in);
+		tab[i] = total;
+		i++;
+		total = 0;
+	}
+	return (tab);
 }

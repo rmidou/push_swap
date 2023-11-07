@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:53:34 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 13:41:00 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 16:43:06 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static int	ft_isdigit(char *c)
 
 static int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		signe;
-	int		nbr;
+	int				i;
+	int				signe;
+	long long int	nbr;
 
 	i = 0;
 	signe = 1;
@@ -49,22 +49,25 @@ static int	ft_atoi(const char *nptr)
 		nbr += (nptr[i] - 48);
 		i++;
 	}
+	if ((signe * nbr) > 2147483647 || (signe * nbr) < -2147483648)
+		ft_error();
 	return (nbr * signe);
 }
 
-static int	*ft_filling2(char *str, int *stack_a)
+static int	*ft_filling2(char *str, int *stack_a, int len_a)
 {
 	int	*temp;
 	int	j;
 
 	j = 0;
-	temp = malloc(sizeof(int) * (ft_strlen(stack_a) + 2));
-	if (stack_a)
+	temp = malloc(sizeof(int) * (len_a + 2));
+	if (len_a > 0)
 	{
-		while (stack_a[j])
+		while (len_a > 0)
 		{
 			temp[j] = stack_a[j];
 			j++;
+			len_a--;
 		}
 	}
 	temp[j] = ft_atoi(str);
@@ -74,7 +77,7 @@ static int	*ft_filling2(char *str, int *stack_a)
 	return (stack_a);
 }
 
-int	*ft_filling(char **av)
+int	*ft_filling(char **av, int *len_a)
 {
 	int	i;
 	int	*stack_a;
@@ -84,9 +87,10 @@ int	*ft_filling(char **av)
 	while (av[i])
 	{
 		if (ft_isdigit(av[i]))
-			stack_a = ft_filling2(av[i], stack_a);
+			stack_a = ft_filling2(av[i], stack_a, *len_a);
 		else
-			write(1, "erreur\n", 7);
+			ft_error();
+		(*len_a)++;
 		i++;
 	}
 	return (stack_a);

@@ -1,52 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maximum.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 10:50:56 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 16:05:29 by rmidou           ###   ########.fr       */
+/*   Created: 2023/10/28 13:40:53 by rmidou            #+#    #+#             */
+/*   Updated: 2023/11/07 06:56:49 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	maxi(int *stack, int len_stack)
+size_t	ft_strlen(const int *str)
 {
-	int	i;
-	int	maxi;
-	int	adresse;
+	size_t	i;
 
 	i = 0;
-	maxi = stack[0];
-	adresse = 0;
-	while (len_stack > 0)
-	{
-		if (stack[i] > maxi)
-		{
-			maxi = stack [i];
-			adresse = i;
-		}
+	if (str == NULL)
+		return (0);
+	while (str[i])
 		i++;
-		len_stack--;
-	}
-	return (adresse);
+	return (i);
 }
 
-int	maxii(int *stack, int len_stack)
+void	ft_error(void)
+{
+	write (1, "Error\n", 6);
+	exit(0);
+}
+
+int	ft_dup(const int *src, int len_src)
 {
 	int	i;
-	int	maxi;
+	int	j;
 
 	i = 0;
-	maxi = stack[0];
-	while (len_stack > 0)
+	j = 0;
+	while (i + 1 < len_src)
 	{
-		if (stack[i] > maxi)
-			maxi = stack [i];
+		j = i + 1;
+		while (j < len_src)
+		{
+			if (src[i] == src[j])
+				return (1);
+			j++;
+		}
 		i++;
-		len_stack--;
 	}
-	return (maxi);
+	return (0);
 }

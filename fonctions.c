@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:56 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 10:54:02 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/06 17:06:18 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ void	pa(int *stack_a, int size_a, int *stack_b, int size_b)
 	{
 		stack_a[0] = stack_b[0];
 		i = 1;
-		while (stack_b[i])
+		while (size_b > 1)
 		{
 			stack_b[i - 1] = stack_b[i];
 			i++;
+			size_b--;
 		}
 		stack_b[i - 1] = '\0';
 	}
@@ -52,10 +53,11 @@ void	pb(int *stack_a, int size_a, int *stack_b, int size_b)
 	{
 		stack_b[0] = stack_a[0];
 		i = 1;
-		while (stack_a[i])
+		while (size_a > 1)
 		{
 			stack_a[i - 1] = stack_a[i];
 			i++;
+			size_a--;
 		}
 		stack_a[i - 1] = '\0';
 	}
@@ -71,10 +73,11 @@ void	ra(int *stack_a, int len_a)
 	{
 		temp = stack_a [0];
 		i = 1;
-		while (stack_a[i])
+		while (len_a > 1)
 		{
 			stack_a[i - 1] = stack_a[i];
 			i++;
+			len_a--;
 		}
 		stack_a[i - 1] = temp;
 	}
@@ -90,10 +93,11 @@ void	rb(int *stack_b, int len_b)
 	{
 		temp = stack_b [0];
 		i = 1;
-		while (stack_b[i])
+		while (len_b > 1)
 		{
 			stack_b[i - 1] = stack_b[i];
 			i++;
+			len_b--;
 		}
 		stack_b[i - 1] = temp;
 	}

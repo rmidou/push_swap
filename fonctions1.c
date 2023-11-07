@@ -6,7 +6,7 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:58 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 10:54:03 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/07 07:22:13 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rra(int *stack_a, int len_a)
 {
 	int	temp;
 
-	if (len_a > 0) 
+	if (len_a > 1) 
 	{
 		temp = stack_a[len_a - 1];
 		while (len_a > 1)

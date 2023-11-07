@@ -4,7 +4,7 @@ NAME = push_swap
 M_SRCS = push_swap.c \
 		fonctions.c \
 		fonctions1.c \
-		ft_strlen.c \
+		utils.c \
 		maximum.c \
 		minimum.c \
 		optimisation.c \

@@ -6,48 +6,49 @@
 /*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:42:39 by nbiron            #+#    #+#             */
-/*   Updated: 2023/11/06 10:57:42 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/07 14:12:18 by rmidou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	set_at_place_mini(int *stack_a)
+static void	set_at_place_mini(int *stack_a, int len_a)
 {
-	if ((size_t)maxi(stack_a) < (ft_strlen(stack_a) / 2))
+	if (maxi(stack_a, len_a) >= (len_a / 2))
 	{
-		while (stack_a[ft_strlen(stack_a) - 1] != maxii(stack_a))
-			ra(stack_a, ft_strlen(stack_a));
+		while (stack_a[len_a - 1] != maxii(stack_a, len_a))
+			rra(stack_a, len_a);
 	}
 	else
 	{
-		while (stack_a[ft_strlen(stack_a) - 1] != maxii(stack_a))
-			rra(stack_a, ft_strlen(stack_a));
+		while (stack_a[len_a - 1] != maxii(stack_a, len_a))
+			ra(stack_a, len_a);
 	}
 }
 
-static void	set_at_place_other(int *stack_a, int *stack_b)
+static void	set_at_place_other(int *stack_a, int *stack_b, int len_a)
 {
 	int	i;
 
-	i = mini(stack_a, stack_b[0]);
-	if ((size_t)mini_adresse(stack_a, stack_b[0]) > (ft_strlen(stack_a) / 2))
+	i = mini(stack_a, stack_b[0], len_a);
+	if (mini_adresse(stack_a, stack_b[0], len_a) >= (len_a / 2))
 	{
-		while (stack_a[ft_strlen(stack_a) - 1] != i)
-			rra(stack_a, ft_strlen(stack_a));
+		while (stack_a[len_a - 1] != i)
+			rra(stack_a, len_a);
 	}
 	else
 	{
-		while (stack_a[ft_strlen(stack_a) - 1] != i)
-			ra(stack_a, ft_strlen(stack_a));
+		while (stack_a[len_a - 1] != i)
+			ra(stack_a, len_a);
 	}
 }
 
-void	set_at_place(int *stack_a, int *stack_b)
+void	set_at_place(int *stack_a, int *stack_b, int len_a, int len_b)
 {
-	if (stack_b[0] > maxii(stack_a) || stack_b[0] < minimum(stack_a))
-		set_at_place_mini (stack_a);
+	if (stack_b[0] > maxii(stack_a, len_a) 
+		|| stack_b[0] < minimum(stack_a, len_a))
+		set_at_place_mini (stack_a, len_a);
 	else
-		set_at_place_other (stack_a, stack_b);
-	pa(stack_a, ft_strlen(stack_a), stack_b, ft_strlen(stack_b));
+		set_at_place_other (stack_a, stack_b, len_a);
+	pa(stack_a, len_a, stack_b, len_b);
 }

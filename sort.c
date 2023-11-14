@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:55:05 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 18:12:04 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/14 19:29:28 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ void	sort_b(int *stack_b, int len_b)
 	if (maxi(stack_b, len_b) > (len_b / 2))
 	{
 		while (stack_b[0] != i)
-			rra(stack_b, len_b);
+			rrb(stack_b, len_b);
 	}
 	else
 	{
 		while (stack_b[0] != i)
-			ra(stack_b, len_b);
+			rb(stack_b, len_b);
 	}
 }

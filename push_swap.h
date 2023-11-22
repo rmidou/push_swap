@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:46 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 17:13:49 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/22 15:43:16 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
-int		*ft_filling(char **av, int *len_a);
+int		*ft_filling(char **av, int *len_a, int ac);
 void	pa(int *stack_a, int size_a, int *stack_b, int size_b);
 void	pb(int *stack_a, int size_a, int *stack_b, int size_b);
 void	ra(int *stack_a, int len_a);
@@ -41,5 +40,6 @@ void	sort_all(int *stack_a, int len_a);
 void	sort_b(int *stack_b, int len_b);
 void	ft_error(void);
 int		ft_dup(const int *src, int len_src);
+char	**ft_split(char const *s, char c);
 
 #endif

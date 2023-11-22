@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   filling.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:53:34 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/06 16:43:06 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/22 15:43:40 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,18 @@ static int	*ft_filling2(char *str, int *stack_a, int len_a)
 	return (stack_a);
 }
 
-int	*ft_filling(char **av, int *len_a)
+int	*ft_filling(char **av, int *len_a, int ac)
 {
 	int	i;
 	int	*stack_a;
 
 	stack_a = NULL;
 	i = 1;
+	if (ac == 2)
+	{
+		av = ft_split(av[1], ' ');
+		i = 0;
+	}
 	while (av[i])
 	{
 		if (ft_isdigit(av[i]))

@@ -12,6 +12,7 @@ M_SRCS = push_swap.c \
 		set_at_placeb.c \
 		set_at_place.c \
 		filling.c \
+		ft_split.c \
 
 M_OBJS = $(M_SRCS:.c=.o)
 all : $(NAME) clean

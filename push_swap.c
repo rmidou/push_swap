@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/07 14:12:03 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/11/22 15:43:02 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		ft_error();
 	stack_b = NULL;
-	stack_a = ft_filling(av, &len_a);
+	stack_a = ft_filling(av, &len_a, ac);
 	if (!stack_a || ft_dup(stack_a, len_a))
 	{
 		free(stack_a);

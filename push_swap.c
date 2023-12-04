@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/22 15:43:02 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/04 16:53:32 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,39 @@ static void	push_swap(int *stack_a, int *len_a)
 	sort_all(stack_a, *len_a);
 }
 
+int	ft_trie(int	*stack_a, int len_a)
+{
+	int	i;
+	int	y;
+
+	i = 1;
+	y = stack_a[0];
+	while (i < len_a)
+	{
+		if (stack_a[i] > y)
+			y = stack_a[i];
+		else
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	main(int ac, char **av)
 {
 	int	*stack_a;
 	int	*stack_b;
 	int	len_a;
 
-	len_a = 0;
-	if (ac < 2)
-		ft_error();
+	if (ac < 3)
+		return (0);
 	stack_b = NULL;
 	stack_a = ft_filling(av, &len_a, ac);
+	if (ft_trie(stack_a, len_a))
+	{
+		free(stack_a);
+		return (0);
+	}
 	if (!stack_a || ft_dup(stack_a, len_a))
 	{
 		free(stack_a);

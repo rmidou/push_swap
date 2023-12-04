@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/04 16:53:32 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/04 16:55:25 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	push_swap(int *stack_a, int *len_a)
 	sort_all(stack_a, *len_a);
 }
 
-int	ft_trie(int	*stack_a, int len_a)
+static int	ft_trie(int	*stack_a, int len_a)
 {
 	int	i;
 	int	y;

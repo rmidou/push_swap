@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/04 16:55:25 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/13 11:30:02 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int ac, char **av)
 	int	*stack_b;
 	int	len_a;
 
-	if (ac < 3)
+	if (ac == 1)
 		return (0);
 	stack_b = NULL;
 	stack_a = ft_filling(av, &len_a, ac);

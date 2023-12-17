@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:53:34 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/13 11:35:54 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 16:58:26 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	ft_atoi(const char *nptr)
 	return (nbr * signe);
 }
 
-static int	*ft_filling2(char *str, int *stack_a, int len_a)
+static int	*ft_filling2(char *str, int *stack_a, int len_a, int ac)
 {
 	int	*temp;
 	int	j;
@@ -74,9 +74,28 @@ static int	*ft_filling2(char *str, int *stack_a, int len_a)
 	}
 	temp[j] = ft_atoi(str);
 	temp[j + 1] = '\0';
+	(void)ac;
 	free(stack_a);
 	stack_a = temp;
 	return (stack_a);
+}
+
+void	free_split(char **map, int ac, int boo)
+{
+	int	i;
+
+	i = 0;
+	
+	if (ac == 2)
+	{
+		while (map[i])
+		{
+			free(map[i]);
+			i++;
+		}
+	}
+	if ((boo == 1 && ac == 2) || (boo == 0))
+		free(map);
 }
 
 int	*ft_filling(char **av, int *len_a, int ac)
@@ -94,11 +113,16 @@ int	*ft_filling(char **av, int *len_a, int ac)
 	while (av[i])
 	{
 		if (ft_isdigit(av[i]))
-			stack_a = ft_filling2(av[i], stack_a, *len_a);
+			stack_a = ft_filling2(av[i], stack_a, *len_a, ac);
 		else
+		{
+			free_split(av, ac, 1);
+			free(stack_a);
 			ft_error();
+		}
 		(*len_a)++;
 		i++;
 	}
+	free_split(av, ac, 1);
 	return (stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/13 11:30:02 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 17:07:11 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,20 @@ static int	ft_trie(int	*stack_a, int len_a)
 	return (1);
 }
 
+#include <stdio.h>
+
 int	main(int ac, char **av)
 {
 	int	*stack_a;
 	int	*stack_b;
 	int	len_a;
 
+	len_a = 0;
 	if (ac == 1)
 		return (0);
 	stack_b = NULL;
 	stack_a = ft_filling(av, &len_a, ac);
-	if (ft_trie(stack_a, len_a))
+	if (len_a == 0 || (len_a != 0 && ft_trie(stack_a, len_a)))
 	{
 		free(stack_a);
 		return (0);

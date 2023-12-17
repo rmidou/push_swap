@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:50 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/17 17:07:11 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 17:09:19 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ static int	ft_trie(int	*stack_a, int len_a)
 	}
 	return (1);
 }
-
-#include <stdio.h>
 
 int	main(int ac, char **av)
 {

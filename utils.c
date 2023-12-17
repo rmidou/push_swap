@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:53 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/07 06:56:49 by rmidou           ###   ########.fr       */
+/*   Updated: 2023/12/17 17:40:17 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,22 @@ int	ft_dup(const int *src, int len_src)
 		i++;
 	}
 	return (0);
+}
+
+int	ft_strlenn(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void	atoi_error(int *stack_a)
+{
+	free(stack_a);
+	ft_error();
 }

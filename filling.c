@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:53:34 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/17 17:09:54 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 17:40:44 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	ft_isdigit(char *c)
 	i = 0;
 	if (c[i] == '-')
 		i++;
+	if (ft_strlenn(c) > 13)
+		return (0);
 	while (c[i])
 	{
 		if (c[i] < '0' || c[i] > '9')
@@ -28,7 +30,7 @@ static int	ft_isdigit(char *c)
 	return (1);
 }
 
-static int	ft_atoi(const char *nptr)
+static int	ft_atoi(const char *nptr, int *stack_a)
 {
 	int				i;
 	int				signe;
@@ -51,8 +53,8 @@ static int	ft_atoi(const char *nptr)
 		nbr += (nptr[i] - 48);
 		i++;
 	}
-	if ((signe * nbr) > 2147483647 || (signe * nbr) < -2147483648)
-		ft_error();
+	if ((signe * nbr) > 2147483647LL || (signe * nbr) < -2147483648LL)
+		atoi_error(stack_a);
 	return (nbr * signe);
 }
 
@@ -72,7 +74,7 @@ static int	*ft_filling2(char *str, int *stack_a, int len_a)
 			len_a--;
 		}
 	}
-	temp[j] = ft_atoi(str);
+	temp[j] = ft_atoi(str, stack_a);
 	temp[j + 1] = '\0';
 	free(stack_a);
 	stack_a = temp;

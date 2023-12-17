@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:46 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/22 15:43:16 by nbiron           ###   ########.fr       */
+/*   Updated: 2023/12/17 17:39:59 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void	sort_b(int *stack_b, int len_b);
 void	ft_error(void);
 int		ft_dup(const int *src, int len_src);
 char	**ft_split(char const *s, char c);
+int		ft_strlenn(char *str);
+void	atoi_error(int *stack_a);
 
 #endif

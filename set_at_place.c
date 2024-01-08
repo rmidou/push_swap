@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_at_place.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmidou <rmidou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 10:42:39 by nbiron            #+#    #+#             */
-/*   Updated: 2023/11/07 14:12:18 by rmidou           ###   ########.fr       */
+/*   Updated: 2024/01/08 15:09:27 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	set_at_place_other(int *stack_a, int *stack_b, int len_a)
 
 void	set_at_place(int *stack_a, int *stack_b, int len_a, int len_b)
 {
-	if (stack_b[0] > maxii(stack_a, len_a) 
+	if (stack_b[0] > maxii(stack_a, len_a)
 		|| stack_b[0] < minimum(stack_a, len_a))
 		set_at_place_mini (stack_a, len_a);
 	else

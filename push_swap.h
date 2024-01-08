@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:46 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/17 17:39:59 by nbiron           ###   ########.fr       */
+/*   Updated: 2024/01/08 15:09:09 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		minimum_adresse(int *stack, int len_stack);
 int		minimum(int *stack, int len_stack);
 int		mini(int *stack, int nbr, int len_stack);
 int		mini_adresse(int *stack, int nbr, int len_stack);
-int		*ft_striteri(int *s, int *stack_to, int len_stack_in, 
+int		*ft_striteri(int *s, int *stack_to, int len_stack_in,
 			int len_stack_to);
 void	set_at_place(int *stack_a, int *stack_b, int len_a, int len_b);
 void	set_at_placeb(int *stack_a, int *stack_b, int len_a, int len_b);

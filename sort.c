@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:55:05 by rmidou            #+#    #+#             */
-/*   Updated: 2023/11/14 19:29:28 by nbiron           ###   ########.fr       */
+/*   Updated: 2024/01/08 15:09:53 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	sort_last(int *stack_a, int len_a)
 	{
 		return ;
 	}
-	if (stack_a[0] <= stack_a[1] && stack_a[1] >= stack_a[2] 
+	if (stack_a[0] <= stack_a[1] && stack_a[1] >= stack_a[2]
 		&& stack_a[0] > stack_a[2])
 	{
 		sa(stack_a, len_a);
@@ -26,7 +26,7 @@ static void	sort_last(int *stack_a, int len_a)
 	}
 	if (stack_a[0] <= stack_a[1] && stack_a[1] >= stack_a[2])
 		rra(stack_a, len_a);
-	if (stack_a[0] >= stack_a[1] && stack_a[1] <= stack_a[2] 
+	if (stack_a[0] >= stack_a[1] && stack_a[1] <= stack_a[2]
 		&& stack_a[0] < stack_a[2])
 		sa(stack_a, len_a);
 	if (stack_a[0] >= stack_a[1] && stack_a[1] <= stack_a[2])

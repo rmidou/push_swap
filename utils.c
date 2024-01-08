@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:40:53 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/17 17:40:17 by nbiron           ###   ########.fr       */
+/*   Updated: 2024/01/08 15:38:15 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlen(const int *str)
 void	ft_error(void)
 {
 	write (1, "Error\n", 6);
-	exit(0);
+	exit(2);
 }
 
 int	ft_dup(const int *src, int len_src)

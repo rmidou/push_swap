@@ -6,13 +6,13 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:29:57 by nbiron            #+#    #+#             */
-/*   Updated: 2023/11/22 15:42:54 by nbiron           ###   ########.fr       */
+/*   Updated: 2024/01/08 14:32:21 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t	ft_strlenn(const char *str)
+static size_t	ft_strlennn(const char *str)
 {
 	size_t	i;
 
@@ -48,7 +48,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	start = 0;
 	i_tab = 0;
-	res = malloc(sizeof(char *) * (ft_strlenn(s) + 1));
+	res = malloc(sizeof(char *) * (ft_strlennn(s) + 1));
 	if (!res)
 		return (NULL);
 	while (s[i])

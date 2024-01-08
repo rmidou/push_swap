@@ -6,7 +6,7 @@
 /*   By: nbiron <nbiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:53:34 by rmidou            #+#    #+#             */
-/*   Updated: 2023/12/17 17:40:44 by nbiron           ###   ########.fr       */
+/*   Updated: 2024/01/08 14:43:26 by nbiron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_isdigit(char *c)
 	int	i;
 
 	i = 0;
-	if (c[i] == '-')
+	if (c[i] == '-' && ft_strlenn (c) > 1)
 		i++;
 	if (ft_strlenn(c) > 13)
 		return (0);
